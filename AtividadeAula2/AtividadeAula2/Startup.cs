@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using AtividadeAula2.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AtividadeAula2
 {
@@ -22,6 +24,11 @@ namespace AtividadeAula2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<Context>
+                (options => options.UseSqlServer(
+                    Configuration.GetConnectionString("Connection")));
+
+
             services.AddControllersWithViews();
         }
 
@@ -46,7 +53,7 @@ namespace AtividadeAula2
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Casos}/{action=Index}/{id?}");
             });
         }
     }
