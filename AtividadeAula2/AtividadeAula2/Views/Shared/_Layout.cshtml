@@ -16,14 +16,29 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
-    <title>Aula Presencial 01 - ASP </title>
+    <title>@ViewData["Title"] </title>
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <span class="navbar-text">
-            Atividade Aula Presencial 2 - Mário Braz - 1929798
-        </span>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"> Mario Braz 1929798 || </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    @Html.ActionLink("Home", "Index", "Casos" , new { area = "" }, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Cadastar Casos", "Cadastrar", "Casos", new { area = "" }, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Sobre", "Sobre", "Casos", new { area = "" }, new { @class = "nav-link" })
+                </li>
+                
+            </ul>
+        </div>
     </nav>
 
     <div class="container body-content">

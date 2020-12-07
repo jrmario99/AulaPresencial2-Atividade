@@ -1,4 +1,55 @@
 ﻿@model List<Casos>
+
 @{
     Layout = "_Layout";
-}
+    ViewData["Title"] = "Index"; }
+
+
+    <div class="container-fluid">
+        <div class="class=" bd-callout bd-callout-warning"">
+            <h3>Histórico de Pesquisas de Casos Covid</h3>
+        </div>
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Sigla</th>
+                    <th>Estado</th>
+                    <th>Total</th>
+                    <th>Suspeitos</th>
+                    <th>Recuperados</th>
+                    <th>Mortes</th>
+                    <th>Data da Pesquisa</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (Casos item in Model)
+                {
+                <tr>
+
+                    <td>@item.Sigla</td>
+                    <td>@item.Estado</td>
+                    <td>@item.TotalCasos</td>
+                    <td>@item.suspeitos</td>
+                    <td>@item.recuperados</td>
+                    <td>@item.mortes</td>
+                    <td>@item.Data</td>
+
+                </tr>
+
+                }
+
+
+
+            </tbody>
+        </table>
+
+        <a class="btn btn-primary" asp-controller="Casos" asp-action="Cadastrar">Cadastrar Casos por UF</a>
+    </div>
+
+
+    
