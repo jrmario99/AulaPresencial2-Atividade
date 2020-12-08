@@ -31,18 +31,40 @@ namespace AtividadeAula2.DAL
 
             casos = _context.Casos.ToList();
 
-            if (casos.Count == 0)
-            {
-
-                return null;
-            }
-
-
             return casos;
 
+        }
+
+        public Casos BuscarPorId(int id, Context _context)
+        {
+
+            var data = _context.Casos.FirstOrDefault(x => x.CasosId == id);
+            
+            return data;
+        }
+
+
+        public Boolean Delete(int id, Context _context)
+        {
+
+
+            var data = _context.Casos.FirstOrDefault(x => x.CasosId == id);
+
+            if (data != null)
+            {
+                _context.Casos.Remove(data);
+                _context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
         }
 
 
 
     }
+
+
+
 }
+
