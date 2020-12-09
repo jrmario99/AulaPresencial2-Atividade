@@ -12,7 +12,7 @@
             <div class="form-row">
 
                 <div class="form-group col-md-8">
-                    <label for="inputProduto">Digite a sigla do Estado:</label>
+                    <label for="inputBuscar">Digite a sigla do Estado:</label>
                     <input type="text" class="form-control" id="buscarsigla">
                 </div>
 
@@ -26,17 +26,17 @@
             <div class="form-row">
 
                 <div class="form-group col-md-8">
-                    <label for="inputProduto">Estado:</label>
+                    <label for="inputCasos">Estado:</label>
                     <input type="text" class="form-control" id="estadoUF" readonly  asp-for="Estado">
                 </div>
 
                 <div class="form-group col-md-4">
-                    <label for="inputProduto">Sigla</label>
+                    <label for="inputCasos">Sigla</label>
                     <input type="text" class="form-control" id="siglaUF" readonly  asp-for="Sigla">
                 </div>
 
                 <div class="form-group col-md-4">
-                    <label for="inputProduto">Data</label>
+                    <label for="inputCasos">Data</label>
                     <input type="text" class="form-control" id="dataUF" readonly  asp-for="Data">
                 </div>
 
@@ -44,12 +44,12 @@
             <div class="form-row">
 
                 <div class="form-group col-md-6">
-                    <label for="inputProduto">Total de Casos:</label>
+                    <label for="inputCasos">Total de Casos:</label>
                     <input type="text" class="form-control" id="totalCasosUF" readonly  asp-for="TotalCasos">
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label for="inputProduto">Mortes:</label>
+                    <label for="inputCasos">Mortes:</label>
                     <input type="text" class="form-control" id="mortesUF" readonly  asp-for="mortes">
                 </div>
             </div>
@@ -57,12 +57,12 @@
             <div class="form-row">
 
                 <div class="form-group col-md-6">
-                    <label for="inputProduto">Casos Suspeitos:</label>
+                    <label for="inputCasos">Casos Suspeitos:</label>
                     <input type="text" class="form-control" id="suspeitosUF" readonly  asp-for="suspeitos">
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label for="inputProduto">Casos Recuperados:</label>
+                    <label for="inputCasos">Casos Recuperados:</label>
                     <input type="text" class="form-control" id="recuperadosUF" readonly  asp-for="recuperados">
                 </div>
 
@@ -80,11 +80,11 @@
 
 <script>
 
-    var siglaUF = document.getElementById("buscarsigla");
+    var siglaEstado = document.getElementById("buscarsigla");
 
     function buscarCasos() {
 
-        let sigla = siglaUF.value;
+        let sigla = (siglaEstado.value).toUpperCase();
         let url = `https://covid19-brazil-api.now.sh/api/report/v1/brazil/uf/${sigla}`;
 
         console.log(sigla);

@@ -5,70 +5,80 @@
 }
 
 
-    <div class="container-fluid">
+<div class="container-fluid">
 
-        <div class="alert alert-danger" role="alert">
-            <h4 class="alert-heading">Sobre</h4>
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Sobre</h4>
+    </div>
+
+    <div class="alert alert-info" role="alert">
+        <h3 class="alert-heading"> API - Covid19 Brazil API</h3>
+        <p>Atividdade da Aula presencial 2.</p>
+        <p>
+            Foi consumido a seguinte API para obtenção dos dados e para seu posterior cadastro.
+            <a href="https://covid19-brazil-api-docs.now.sh/" class="alert-link"> Documentação da API</a>
+        </p>
+        <hr>
+        <p class="mb-0">
+            O serviço utilizado tem como objetivo obter os dados de casos de COVID por estado,
+            passando por parametro a sigla de cada Estado. <a href="https://covid19-brazil-api.now.sh/api/report/v1/brazil/uf/pr" class="alert-link"> Serviço Utilizado </a>
+        </p>
+    </div>
+
+    <div class="alert alert-dark" role="alert">
+        <h3 class="alert-heading"> API </h3>
+        <p>Serviços Disponiveis.</p>
+
+
+        <div class="alert alert-light" role="alert">
+
+            <div class="alert alert-dark" role="alert">
+                <p> GET: /api/CasosCovid/Listar </p>
+            </div>
+            <h4>Respostas de Sucesso</h4>
+            <p><strong>Code</strong> : <code>200 OK</code></p>
+            <p>Lista todos Estados e seus casos de COVID, cadastrado no sistema.</p>
         </div>
 
-        <div class="alert alert-info" role="alert">
-            <h3 class="alert-heading"> API - Covid19 Brazil API</h3>
-            <p>Atividdade da Aula presencial 2.</p>
-            <p>
-                Foi consumido a seguinte API para obtenção dos dados e para seu posterior cadastro.
-                <a href="https://covid19-brazil-api-docs.now.sh/" class="alert-link"> Documentação da API</a>
-            </p>
-            <hr>
-            <p class="mb-0">
-                O serviço utilizado tem como objetivo obter os dados de casos de COVID por estado,
-                passando por parametro a sigla de cada Estado. <a href="https://covid19-brazil-api.now.sh/api/report/v1/brazil/uf/pr" class="alert-link"> Serviço Utilizado </a>
-            </p>
+
+        <div class="alert alert-light" role="alert">
+
+            <div class="alert alert-dark" role="alert">
+                <p>GET : /api/CasosCovid/Buscar/{id}  </p>
+            </div>
+            <h4>Respostas de Sucesso</h4>
+            <p><strong>Code</strong> : <code>200 OK</code></p>
+            <p> Faz a busca dos casos de um determinado Estado por seu id, caso seja ennviado um id inexistente retorna erro. </p>
+            <h4>Respostas de Erro</h4>
+            <p><strong>Code</strong> : <code> 400 - { msg = "Caso não encontrado" } </code></p>
+
         </div>
 
-        <div class="alert alert-dark" role="alert">
-            <h3 class="alert-heading"> API </h3>
-            <p>Serviços Disponiveis.</p>
+        <div class="alert alert-light" role="alert">
 
-            
-            <div class="alert alert-light" role="alert">
+            <div class="alert alert-dark" role="alert">
+                <p>DELETE : /api/CasosCovid/DeletarCaso/{id}  </p>
+            </div>
+            <h4>Respostas de Sucesso</h4>
+            <p><strong>Code</strong> : <code>200 OK</code></p>
+            <p> Deleta um Estado pelo id </p>
+            <h4>Respostas de Erro</h4>
+            <p><strong>Code</strong> : <code> 400 - { msg = "Caso não encontrado" } </code></p>
 
-                <div class="alert alert-dark" role="alert">
-                    <p> GET: /api/CasosCovid/Listar </p>
-                </div>
-                <h4>Respostas de Sucesso</h4>
-                <p><strong>Code</strong> : <code>200 OK</code></p>
-                <p>Lista todos Estados e seus casos de COVID, cadastrado no sistema.</p>
-            </div>   
-            
-            
-            <div class="alert alert-light" role="alert">
+        </div>
+    
+        <div class="alert alert-light" role="alert">
 
-                <div class="alert alert-dark" role="alert">
-                    <p>GET : /api/CasosCovid/Buscar/{id}  </p>
-                </div>
-                <h4>Respostas de Sucesso</h4>
-                <p><strong>Code</strong> : <code>200 OK</code></p>                              
-                <p> Faz a busca dos casos de um determinado Estado por seu id, caso seja ennviado um id inexistente retorna erro. </p>
-                <h4>Respostas de Erro</h4>
-                <p><strong>Code</strong> : <code> 400 - { msg = "Caso não encontrado" } </code></p>
-                    
-                </div>
-
+            <div class="alert alert-dark" role="alert">
+                <p> POST : /api/CasosCovid/Cadastrar  </p>
             </div>
 
-
-            <div class="alert alert-light" role="alert">
-
-                <div class="alert alert-dark" role="alert">
-                    <p> POST : /api/CasosCovid/Cadastrar  </p>
-                </div>
-                
-                <h4> Para inserir casos e dados de um Estado</h4>
-                <div class="alert alert-warning" role="alert">
-                    <pre>
-                    <p>Conteúdo:</p>        
-                    <code class="json language-json">
-                    {
+            <h4> Para inserir casos e dados de um Estado</h4>
+            <div class="alert alert-warning" role="alert">
+                <pre>
+                <p>Conteúdo:</p>        
+                <code class="json language-json">
+                        {
                         "casosId":3,
                         "sigla":null,
                         "estado":"São Paulo",
@@ -77,18 +87,16 @@
                         "suspeitos":5334,
                         "recuperados":596,
                         "data":"2020-12-07T19:43:41.225"
-                    }
-                    </code>
+                         }
+                </code>
                 </pre>
-                </div>
-
             </div>
 
-            </div>
+        </div>
+    </div>
 
 
-
-     </div>
+</div>
 
 
 
